@@ -43,3 +43,26 @@ I learned alot.
 1. The commands: cd, ls, cat, nano, chmod +x "file name", and making sure you input ./ before your script.
 
 This was a great first introduction to script building and I look forward to learning to build more.
+
+07/02/26 - Password Reset Ubuntu Server User
+
+I created an Ubuntu server VM a while ago and forgot the password when I went to SSH into this morning.  Below are the steps I used to reset my password.
+
+1. I accessed the GRUB (BIOS) by holding down shift when starting up the VM.
+2. I chose Recovery Mode in the menu.
+3. After recovery I choose the root shell so I could give myself rewrite permission instead of read only.
+4. Once in the shell I used this command: mount -rw -o remount /   (I didn't know what this meant I looked this up and I learned that this is telling the mounted system to change to read-write permissions and telling the file system to remount instead of mounting another one)
+5. Now I had to change my acutal password and thought my user name was "klm23" and was getting the return "klm23 does not exist". I tried different versions until I did a ls command and saw my user name was "kyle"
+
+<img width="1676" height="856" alt="image" src="https://github.com/user-attachments/assets/be736bd5-b5a0-4b10-8eab-9a7e471c4179" />
+
+6. I used the command: passwd username (where the user name is "kyle")
+7. I entered the new password twice. Success.
+8. I then typed "exit" to go back to the GRUB menu.
+9. I selected "resume in normal boot"
+
+<img width="1565" height="880" alt="image" src="https://github.com/user-attachments/assets/adf605c6-8602-45c2-8da8-209853d330e0" />
+
+I entered in the new password and now have access again.
+
+<img width="1528" height="856" alt="image" src="https://github.com/user-attachments/assets/e4608324-170b-4ad8-85d5-dcf2f90998a8" />
